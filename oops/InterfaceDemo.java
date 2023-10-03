@@ -26,12 +26,10 @@ class S implements Car {
         this.mileage = mileage;
     }
 
-    @Override
     public float getStdMileage() {
         return this.mileage;
     }
 
-    @Override
     public int getMaxSpeed() {
         return this.maxSpeed;
     }
