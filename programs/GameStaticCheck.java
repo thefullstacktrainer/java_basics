@@ -1,6 +1,6 @@
 package programs;
 
-public class Game {
+public class GameStaticCheck {
 
     static int id;
     static {
@@ -16,11 +16,12 @@ public class Game {
     }
 
     public static void main(String[] args) {
-        System.out.println(Game.id);
+        System.out.println(GameStaticCheck.id);
         System.out.println("This is Main");
-        Game robot = new Game();
-        System.out.println(Game.id);
-        Game robot2 = new Game();
+        GameStaticCheck robot = new GameStaticCheck();
+        System.out.println(GameStaticCheck.id);
+        GameStaticCheck robot2 = new GameStaticCheck();
+        a();
     }
 
     static void a() {
@@ -29,11 +30,11 @@ public class Game {
     }
 
     static void b() {
-        System.out.println("a called");
+        System.out.println("b called");
     }
 
     static void c() {
-        System.out.println("a called");
+        System.out.println("c called");
         a();
     }
 
