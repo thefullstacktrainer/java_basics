@@ -7,6 +7,7 @@ public class GameStaticCheck {
         id = 1;
         System.out.println("Static block 1");
     }
+
     {
         id = 2;
         System.out.println("Normal block 1");
