@@ -2,31 +2,30 @@ package oops1.consultation_platform;
 
 import java.util.Date;
 
-public class Notification {
-
-    // Attributes
-    private long notificationId;
-    private String title;
+// Concrete class extending AbstractContent: Notification
+class Notification extends AbstractContent {
     private String message;
     private NotificationType notificationType;
-    private Date dateCreated;
     private boolean isRead;
 
-    // Constructor
-    public Notification(long notificationId, String title, String message,
-            NotificationType notificationType, Date dateCreated) {
-        this.notificationId = notificationId;
-        this.title = title;
+    public Notification(long notificationId, String title, Date dateCreated,
+            String message, NotificationType notificationType) {
+        super(notificationId, title, dateCreated);
         this.message = message;
         this.notificationType = notificationType;
-        this.dateCreated = dateCreated;
         this.isRead = false;
     }
 
-    // Getter methods
-    public long getNotificationId() {
-        return notificationId;
+    @Override
+    public void displayContent() {
+        System.out.println("Notification Title: " + title);
+        System.out.println("Type: " + notificationType);
+        System.out.println("Message: " + message);
+        System.out.println("Date: " + dateCreated);
+        System.out.println("Read Status: " + (isRead ? "Read" : "Unread"));
     }
+
+    // Getter methods
 
     public String getTitle() {
         return title;
@@ -46,11 +45,6 @@ public class Notification {
 
     public boolean isRead() {
         return isRead;
-    }
-
-    // Setter methods
-    public void setNotificationId(long notificationId) {
-        this.notificationId = notificationId;
     }
 
     public void setTitle(String title) {
@@ -79,7 +73,7 @@ public class Notification {
     }
 
     public void displayNotification() {
-        System.out.println("Notification ID: " + notificationId);
+        System.out.println("Notification ID: " + id);
         System.out.println("Title: " + title);
         System.out.println("Message: " + message);
         System.out.println("Type: " + notificationType);
