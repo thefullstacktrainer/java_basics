@@ -23,9 +23,6 @@ public class Notification {
         this.isRead = false; // Default to false when a notification is created
     }
 
-    // Getter and Setter methods
-    // ... (similar to the previous examples)
-
     // Additional behaviors or methods
     public void markAsRead() {
         this.isRead = true;
