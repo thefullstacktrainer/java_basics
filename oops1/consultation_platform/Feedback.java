@@ -40,6 +40,14 @@ public class Feedback {
         return dateGiven;
     }
 
+    public boolean requiresReview() {
+        if (this.rating < 3.0) {
+            System.out.println("Feedback requires review: " + this.getComment());
+            return true;
+        }
+        return false;
+    }
+
     // Behavior
     public void displayFeedbackInfo() {
         System.out.println("Feedback ID: " + feedbackId);

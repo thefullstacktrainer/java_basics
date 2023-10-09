@@ -20,13 +20,60 @@ public class Notification {
         this.message = message;
         this.notificationType = notificationType;
         this.dateCreated = dateCreated;
-        this.isRead = false; // Default to false when a notification is created
+        this.isRead = false;
     }
 
-    // Getter and Setter methods
-    // ... (similar to the previous examples)
+    // Getter methods
+    public long getNotificationId() {
+        return notificationId;
+    }
 
-    // Additional behaviors or methods
+    public String getTitle() {
+        return title;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public NotificationType getNotificationType() {
+        return notificationType;
+    }
+
+    public Date getDateCreated() {
+        return dateCreated;
+    }
+
+    public boolean isRead() {
+        return isRead;
+    }
+
+    // Setter methods
+    public void setNotificationId(long notificationId) {
+        this.notificationId = notificationId;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public void setNotificationType(NotificationType notificationType) {
+        this.notificationType = notificationType;
+    }
+
+    public void setDateCreated(Date dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
+    public void setRead(boolean isRead) {
+        this.isRead = isRead;
+    }
+
+    // Utility methods
     public void markAsRead() {
         this.isRead = true;
     }
@@ -38,6 +85,18 @@ public class Notification {
         System.out.println("Type: " + notificationType);
         System.out.println("Date: " + dateCreated);
         System.out.println("Read: " + (isRead ? "Yes" : "No"));
+    }
+
+    // Control flow methods
+    public void displayIfUrgent() {
+        if (!this.isRead && this.notificationType == NotificationType.ALERT) {
+            System.out.println("URGENT: " + this.getTitle());
+        }
+    }
+
+    public boolean requiresImmediateAttention() {
+        return !this.isRead && (this.notificationType == NotificationType.ALERT
+                || this.notificationType == NotificationType.REMINDER);
     }
 
     // Enum for notification type

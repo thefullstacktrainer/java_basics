@@ -83,6 +83,12 @@ public class About {
         this.dateUpdated = dateUpdated;
     }
 
+    public void updateDescriptionForAboutUs(String newDescription) {
+        if (this.title.equalsIgnoreCase("About Us")) {
+            this.setDescription(newDescription);
+        }
+    }
+
     // Behavior
     public void displayAboutInfo() {
         System.out.println("About ID: " + aboutId);

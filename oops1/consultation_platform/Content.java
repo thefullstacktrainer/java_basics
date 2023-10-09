@@ -92,6 +92,12 @@ public class Content {
         this.tags = tags;
     }
 
+    public void displayIfVideoContent() {
+        if (this.contentType == ContentType.VIDEO) {
+            this.displayContentInfo();
+        }
+    }
+
     // Behavior
     public void displayContentInfo() {
         System.out.println("Content ID: " + contentId);

@@ -73,6 +73,12 @@ public class Contact {
         this.operatingHours = operatingHours;
     }
 
+    public void alertIfNoPhoneNumber() {
+        if (this.phone == null || this.phone.isEmpty()) {
+            System.out.println("Warning: Phone number for contact not provided!");
+        }
+    }
+
     // Behavior
     public void displayContactInfo() {
         System.out.println("Contact ID: " + contactId);

@@ -39,6 +39,12 @@ public class Category {
         this.description = description;
     }
 
+    public void displayIfTechnical() {
+        if (this.categoryName.equalsIgnoreCase("Technical")) {
+            this.displayCategoryInfo();
+        }
+    }
+
     // Behavior
     public void displayCategoryInfo() {
         System.out.println("Category ID: " + categoryId);

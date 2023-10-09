@@ -51,6 +51,12 @@ public class Consultant {
         return isActive;
     }
 
+    public void displayIfITExpert() {
+        if (this.expertise.equalsIgnoreCase("IT")) {
+            this.displayConsultantInfo();
+        }
+    }
+
     // Behavior (Methods)
     public void displayConsultantInfo() {
         System.out.println("Consultant ID: " + this.id);

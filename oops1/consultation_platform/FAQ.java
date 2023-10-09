@@ -50,6 +50,12 @@ public class FAQ {
         this.category = category;
     }
 
+    public void displayIfBillingRelated() {
+        if (this.category.equalsIgnoreCase("Billing")) {
+            this.displayFAQ();
+        }
+    }
+
     // Behavior
     public void displayFAQ() {
         System.out.println("FAQ ID: " + faqId);
